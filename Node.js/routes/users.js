@@ -28,8 +28,6 @@ router.get(/\/update\/id=(\d+)&name=([^&]+)&age=(\d+)&isDelete=(true|false)/, (r
   const age = match[3];
   const isDelete = (match[4] === 'true')? (true): (false);
 
-  console.log(id, name, age, isDelete);
-
   fs.readFile(pathUsersFile, (err, data) => {
     if (!err) {
       const newData = JSON.parse(data.toString());
@@ -72,8 +70,6 @@ router.get(/\/addUser\/name=([^&]+)&age=(\d+)&isDelete=(true|false)/, (req, res,
       };
 
       const idUserInArray = users.length;
-
-      console.log(idUserInArray);
 
       const newUser = {
         id: idNewUser+1,
