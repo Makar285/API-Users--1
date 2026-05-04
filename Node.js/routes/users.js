@@ -6,7 +6,6 @@ const router = express.Router();
 // Other Import
 const fs = require("fs");
 const path = require("path");
-const lodash = require("lodash");
 
 
 // My file Import
@@ -16,13 +15,6 @@ const { type } = require("os");
 
 // Variables
 const pathUsersFile = path.join(__dirname, "..", "users.json");
-
-
-// Test, delete before release
-router.use((req, res, next) => {
-  console.log("Пришел запрос:", req.method, req.url);
-  next();
-});
 
 
 // Routings:
