@@ -6,11 +6,13 @@ const app = express();
 // Other Import
 const fs = require('fs');
 const path = require('path');
-const lodash = require('lodash');
 
 
+// Path Users Data
 const pathUsersFile = path.join(__dirname, 'users.json');
 
+
+// Create File users.json, If There Is None
 if (!fs.existsSync(pathUsersFile)) {
   fs.writeFileSync(pathUsersFile, JSON.stringify([]));
 };
